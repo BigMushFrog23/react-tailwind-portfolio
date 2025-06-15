@@ -14,8 +14,8 @@ export const ContactSection = () => {
 
             setTimeout(() => {
                 toast({
-                    title: "Message sent!",
-                    description: "Thank you for your message. I'll get back to you soon."
+                    title: "Message not sent.",
+                    description: "Your message has not been sent, this is a test form."
                 });
                 setIsSubmitting(false);
             }, 1500);
@@ -162,6 +162,7 @@ export const ContactSection = () => {
                         )}
                         >
                             {isSubmitting ? "Sending..." : "Send Message"}
+                        
                             <Send size={16} />
                         </button>
                     </form>
