@@ -3,12 +3,12 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "Simplistic Website",
-        description: "A simple website.",
-        image: "/projects/Project1.svg",
-        tags: ["HTML", "CSS", "PHP"],
-        demoUrl: "#",
-        githubUrl: "#",
+        title: "Pathfinding-visualizer",
+        description: "A pathfinding algorithm visualizer.",
+        image: "/projects/pathfinding.png",
+        tags: ["React", "TailwindCSS", "TypeScript"],
+        demoUrl: "https://pathfinding-algorithm-visualizer-df1o5gwrp.vercel.app/",
+        githubUrl: "https://github.com/BigMushFrog23/pathfinding-visualizer-main",
     },
 
     {
