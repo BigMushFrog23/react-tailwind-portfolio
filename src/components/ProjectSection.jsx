@@ -5,7 +5,7 @@ const projects = [
         id: 1,
         title: "Pathfinding-visualizer",
         description: "A pathfinding algorithm visualizer.",
-        image: "/projects/pathfinding.png",
+        image: "/projects/pathfinding.PNG",
         tags: ["React", "TailwindCSS", "TypeScript"],
         demoUrl: "https://pathfinding-algorithm-visualizer-df1o5gwrp.vercel.app/",
         githubUrl: "https://github.com/BigMushFrog23/pathfinding-visualizer-main",
