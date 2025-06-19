@@ -5,7 +5,7 @@ const projects = [
         id: 1,
         title: "Pathfinding-visualizer",
         description: "A pathfinding algorithm visualizer.",
-        image: "/projects/pathfinding.PNG",
+        image: "/projects/pathfinding.png",
         tags: ["React", "TailwindCSS", "TypeScript"],
         demoUrl: "https://pathfinding-algorithm-visualizer-df1o5gwrp.vercel.app/",
         githubUrl: "https://github.com/BigMushFrog23/pathfinding-visualizer-main",
@@ -13,12 +13,12 @@ const projects = [
 
     {
         id: 2,
-        title: "Full-Stack Website",
-        description: "Frontend, Backend and a Database!",
-        image: "/projects/Project2.svg",
-        tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-        demoUrl: "#",
-        githubUrl: "#",
+        title: "Diceware-password-generator",
+        description: "A Diceware password generator",
+        image: "/projects/diceware.png",
+        tags: ["HTML", "CSS", "JavaScript"],
+        demoUrl: "https://password-generator-delta-ten-90.vercel.app/",
+        githubUrl: "https://github.com/BigMushFrog23/password-generator",
     },
 
     {
