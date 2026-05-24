@@ -1,111 +1,101 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
-
-const projects = [
-    {
-        id: 1,
-        title: "Pathfinding-visualizer",
-        description: "A pathfinding algorithm visualizer.",
-        image: "/projects/pathfinding.PNG",
-        tags: ["React", "TailwindCSS", "TypeScript"],
-        demoUrl: "https://pathfinding-algorithm-visualizer-df1o5gwrp.vercel.app/",
-        githubUrl: "https://github.com/BigMushFrog23/pathfinding-visualizer-main",
-    },
-
-    {
-        id: 2,
-        title: "Diceware-password-generator",
-        description: "A Diceware password generator",
-        image: "/projects/diceware.png",
-        tags: ["HTML", "CSS", "JavaScript"],
-        demoUrl: "https://password-generator-delta-ten-90.vercel.app/",
-        githubUrl: "https://github.com/BigMushFrog23/password-generator",
-    },
-
-    {
-        id: 3,
-        title: "Python Application",
-        description: "An app made in Python.",
-        image: "/projects/Project3.svg",
-        tags: ["Python"],
-        demoUrl: "#",
-        githubUrl: "#",
-    },
-];
+import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { projects } from "@/data/projects";
 
 export const ProjectSection = () => {
-    return <section id="projects" className="py-24 px-4 relative">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                 Featured <span className="text-primary"> Projects </span>
-            </h2>
+    const { t, language } = useLanguage();
 
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Here are some of my recent or favorite projects. Each project was
-                crafted with care and attention to detail, making an end product that
-                can satisfy any user.
-            </p>
+    return (
+        <section id="projects" className="py-24 px-4 relative">
+            <div className="container mx-auto max-w-5xl">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                    {t.projects.title} <span className="text-primary"> {t.projects.titleAccent} </span>
+                </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((project, key) => (
-                    <div 
-                    key={key} 
-                    className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
-                    >
-                        <div className="h-48 overflow-hidden">
-                            <img 
-                            src={project.image} 
-                            alt={project.title} 
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                        </div>
+                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+                    {t.projects.subtitle}
+                </p>
 
-                        <div className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, key) => (
+                        <Link
+                            key={key}
+                            to={`/projects/${project.id}`}
+                            className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover block"
+                        >
+                            <div className="h-48 overflow-hidden bg-secondary/30">
+                                <img
+                                    src={project.image}
+                                    alt={project.title[language]}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                            </div>
+
+                            <div className="p-6 text-left">
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.map((tag) => (
-                                        <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                                    {project.tags.map((tag, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                                        >
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
-                            
 
-                            <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                            <p className="text-muted-foreground text-sm mb-4">
-                                {project.description}
-                            </p>
+                                <h3 className="text-xl font-semibold mb-1">
+                                    {project.title[language]}
+                                </h3>
+                                <p className="text-muted-foreground text-sm mb-4">
+                                    {project.shortDescription[language]}
+                                </p>
 
-                            <div className="flex justify-between items-center">
-                                <div className="flex space-x-3">
-                                    <a 
-                                    href={project.demoUrl} 
-                                    target="_blank"
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                    >
-                                        <ExternalLink size={20}/>
-                                    </a>
-
-                                    <a 
-                                    href={project.githubUrl} 
-                                    target="_blank"
-                                    className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                                        <Github size={20}/>
-                                    </a>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-primary text-sm font-medium inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                                        {t.projects.viewDetails} <ArrowRight size={14} />
+                                    </span>
+                                    <div className="flex space-x-3" onClick={(e) => e.stopPropagation()}>
+                                        {project.demoUrl && project.demoUrl !== "#" && (
+                                            <a
+                                                href={project.demoUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <ExternalLink size={20} />
+                                            </a>
+                                        )}
+                                        {project.githubUrl && project.githubUrl !== "#" && (
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                <Github size={20} />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                        </Link>
+                    ))}
+                </div>
 
-            <div className="text-center mt-12">
-                <a
-                className="cosmic-button w-fit flex items-center mx-auto gap-2"
-                target="_blank"
-                href="https://github.com/BigMushFrog23"
-                >
-                    Check My Github <ArrowRight size={16} />
-                </a>
+                <div className="text-center mt-12">
+                    <a
+                        className="cosmic-button w-fit flex items-center mx-auto gap-2"
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://github.com/BigMushFrog23"
+                    >
+                        {t.projects.checkGithub} <ArrowRight size={16} />
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    );
 };

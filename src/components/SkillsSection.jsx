@@ -1,78 +1,83 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const skills = [
     /* Frontend */
-    {name: "HTML/CSS", level: 70, category: "Frontend"},
-    {name: "JavaScript", level: 50, category: "Frontend"},
+    { name: "HTML/CSS", category: "Frontend" },
+    { name: "JavaScript", category: "Frontend" },
 
     /* Backend */
-    {name: "Python", level: 60, category: "Backend"},
-    {name: "PHP", level: 30, category: "Backend"},
+    { name: "Python", category: "Backend" },
+    { name: "PHP", category: "Backend" },
 
     /* Database */
-    {name: "SQL", level: 80, category: "Database"},
+    { name: "SQL", category: "Database" },
 
     /* Game Dev */
-    {name: "GDScript", level: 60, category: "Game Development"},
+    { name: "GDScript", category: "Game Development" },
 
     /* Tools */
-    {name: "VSCode", level: 75, category: "Tools"},
-    {name: "Github", level: 70, category: "Tools"},
-    {name: "Xampp", level: 80, category: "Tools"},
-    {name: "Docker", level: 15, category: "Tools"}
+    { name: "VSCode", category: "Tools" },
+    { name: "Github", category: "Tools" },
+    { name: "Xampp", category: "Tools" },
+    { name: "Docker", category: "Tools" },
 ];
 
 const categories = ["all", "Frontend", "Backend", "Database", "Game Development", "Tools"];
 
 export const SkillsSection = () => {
-        const [activeCategory, setActiveCategory] = useState("all");
+    const [activeCategory, setActiveCategory] = useState("all");
+    const { t } = useLanguage();
 
-        const filteredSkills = skills.filter(
-            (skill) => activeCategory === "all" || skill.category === activeCategory
+    const categoryLabel = {
+        all: t.skills.categories.all,
+        Frontend: t.skills.categories.frontend,
+        Backend: t.skills.categories.backend,
+        Database: t.skills.categories.database,
+        "Game Development": t.skills.categories.game,
+        Tools: t.skills.categories.tools,
+    };
+
+    const filteredSkills = skills.filter(
+        (skill) => activeCategory === "all" || skill.category === activeCategory
     );
     return (
         <section id="skills" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                    My <span className="text-primary"> Skills</span>
+                    {t.skills.title} <span className="text-primary"> {t.skills.titleAccent}</span>
                 </h2>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {categories.map((category, key) => (
-                        <button 
-                        key={key} 
-                        onClick={() => setActiveCategory(category)}
-                        className={cn(
-                            "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                            activeCategory === category ? "bg-primary text-primary-foreground" : "bg-secondary/70 text-foreground hover:bd-secondary"
-                        )}
+                        <button
+                            key={key}
+                            onClick={() => setActiveCategory(category)}
+                            className={cn(
+                                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                activeCategory === category
+                                    ? "bg-primary text-primary-foreground"
+                                    : "bg-secondary/70 text-foreground hover:bg-secondary"
+                            )}
                         >
-                            {category}
+                            {categoryLabel[category]}
                         </button>
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredSkills.map((skill, key) => (
-                        <div 
-                        key={key} 
-                        className="bg-card p-6 rounded-lg shadow-xs card-hover"
+                        <div
+                            key={key}
+                            className="bg-card p-5 rounded-lg shadow-xs card-hover text-center"
                         >
-                            <div className="text-left mb-4">
-                                <h3 className="font-semibold text-lg">
-                                    {skill.name}
-                                </h3>
-                            </div>
-                            <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                                <div className="bg-primary h-2 rounded-full origin-left animate-[grow1.55s_ease-out"
-                                style={{width: skill.level + "%"}}
-                                />
-                            </div>
-
-                            <div className="text-right mt-1">
-                                <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                            </div>
+                            <h3 className="font-semibold text-base md:text-lg">
+                                {skill.name}
+                            </h3>
+                            <p className="text-xs text-muted-foreground mt-1">
+                                {categoryLabel[skill.category]}
+                            </p>
                         </div>
                     ))}
                 </div>

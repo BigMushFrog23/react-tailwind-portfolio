@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:jeremypopovportfolio.framer.website)",
+      "Bash(npx vite *)",
+      "PowerShell(Get-Process -Name node -ErrorAction SilentlyContinue | Where-Object { \\(Get-NetTCPConnection -LocalPort 5173 -ErrorAction SilentlyContinue\\).OwningProcess -contains $_.Id } | Stop-Process -Force)"
+    ]
+  }
+}
