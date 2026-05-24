@@ -10,12 +10,20 @@ const skills = [
     /* Backend */
     { name: "Python", category: "Backend" },
     { name: "PHP", category: "Backend" },
+    { name: "Java", category: "Backend" },
+    { name: "C++", category: "Backend" },
 
     /* Database */
     { name: "SQL", category: "Database" },
 
+    /* Frameworks */
+    { name: "React", category: "Frameworks" },
+    { name: "Laravel", category: "Frameworks" },
+
     /* Game Dev */
     { name: "GDScript", category: "Game Development" },
+    { name: "Godot", category: "Game Development" },
+    { name: "Unreal Engine", category: "Game Development" },
 
     /* Tools */
     { name: "VSCode", category: "Tools" },
@@ -24,7 +32,7 @@ const skills = [
     { name: "Docker", category: "Tools" },
 ];
 
-const categories = ["all", "Frontend", "Backend", "Database", "Game Development", "Tools"];
+const categories = ["all", "Frontend", "Backend", "Database", "Frameworks", "Game Development", "Tools"];
 
 export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("all");
@@ -35,6 +43,7 @@ export const SkillsSection = () => {
         Frontend: t.skills.categories.frontend,
         Backend: t.skills.categories.backend,
         Database: t.skills.categories.database,
+        Frameworks: t.skills.categories.frameworks,
         "Game Development": t.skills.categories.game,
         Tools: t.skills.categories.tools,
     };
