@@ -71,8 +71,8 @@ export const translations = {
       subtitle: "A snapshot of impact and experience so far.",
       items: [
         { value: "70%", label: "Customer satisfaction rate" },
-        { value: "1+", label: "Months of documented work experience" },
-        { value: "3", label: "Successful projects completed" },
+        { value: "8+", label: "Months of documented work experience" },
+        { value: "8", label: "Successful projects completed" },
       ],
     },
     projects: {
@@ -190,8 +190,8 @@ export const translations = {
       subtitle: "Un aperçu de l'impact et de l'expérience acquise jusqu'ici.",
       items: [
         { value: "70%", label: "Taux de satisfaction client" },
-        { value: "1+", label: "Mois d'expérience professionnelle documentée" },
-        { value: "3", label: "Projets réalisés avec succès" },
+        { value: "8+", label: "Mois d'expérience professionnelle documentée" },
+        { value: "8", label: "Projets réalisés avec succès" },
       ],
     },
     projects: {
