@@ -19,7 +19,7 @@ export const translations = {
       title: "About",
       titleAccent: "Me",
       heading: "Passionate Web Developer & Game Developer",
-      p1: "I'm a 19-year-old Computer Science Student in the BTS SIO SLAM program (2024–2026), with hands-on internship experience building responsive, performant websites that simplified company processes. My core stack includes HTML, CSS, JavaScript, PHP, and MySQL.",
+      p1: "I'm a 20-year-old Computer Science Student in the BTS SIO SLAM program (2024–2026). I completed an internship at Sonis (Spring 2025) and am currently in an apprenticeship (alternance, 3 days/week) at CECCA, building responsive, performant websites that simplified company processes. My core stack includes HTML, CSS, JavaScript, PHP, and MySQL.",
       p2: "I'm passionate about solving complex problems and building efficient systems — transforming concepts into innovative, reliable, and scalable solutions that create real-world impact. I also enjoy designing interactive games with Godot.",
       getInTouch: "Get In Touch",
       downloadCV: "Download CV",
@@ -41,13 +41,23 @@ export const translations = {
         title: "Education & Experience",
         items: [
           {
+            period: "Oct 2025 – Aug 2026",
+            place: "CECCA — Apprenticeship (Alternance, 3 days/week)",
+            desc: "Web and application development as part of my BTS SIO SLAM apprenticeship.",
+          },
+          {
+            period: "31/03/2025 – 15/05/2025",
+            place: "Sonis (Les Ulis, 91) — Web Developer Internship",
+            desc: "Designed and built a responsive stock management web app (mobile & desktop), migrated a PHP/MySQL stack to a full-JavaScript architecture (Express, EJS, React), and added QR/barcode scanning, real-time email alerts, authentication, and HTTPS/SSL.",
+          },
+          {
             period: "Oct 2024 – Present",
             place: "H3 Hitema — BTS SIO SLAM",
-            desc: "Working with SONIS and CECCA on web and application development projects during apprenticeship.",
+            desc: "Studying Information Systems Solutions with a focus on Software & Business Application development.",
           },
           {
             period: "Sep 2021 – Jul 2024",
-            place: "Lycée Polyvalent Jean-Jaurès",
+            place: "Lycée Polyvalent Jean-Jaurès — Bac Général",
             desc: "Deepened computer science knowledge and explored career paths through creative projects.",
           },
         ],
@@ -139,7 +149,7 @@ export const translations = {
       title: "À propos de",
       titleAccent: "moi",
       heading: "Développeur Web & Développeur de Jeux Passionné",
-      p1: "Je suis étudiant en informatique de 19 ans en BTS SIO SLAM (2024–2026), avec une expérience de stage concrète dans la création de sites web réactifs et performants qui ont simplifié les processus de l'entreprise. Mon stack principal inclut HTML, CSS, JavaScript, PHP et MySQL.",
+      p1: "Je suis étudiant en informatique de 20 ans en BTS SIO SLAM (2024–2026). J'ai effectué un stage chez Sonis (printemps 2025) et je suis actuellement en alternance (3 jours/semaine) chez CECCA, où je développe des sites web réactifs et performants qui simplifient les processus de l'entreprise. Mon stack principal inclut HTML, CSS, JavaScript, PHP et MySQL.",
       p2: "Je suis passionné par la résolution de problèmes complexes et la construction de systèmes efficaces — transformant les concepts en solutions innovantes, fiables et évolutives qui ont un impact réel. J'aime aussi créer des jeux interactifs avec Godot.",
       getInTouch: "Me contacter",
       downloadCV: "Télécharger le CV",
@@ -161,13 +171,23 @@ export const translations = {
         title: "Formation & Expérience",
         items: [
           {
+            period: "Oct 2025 – Août 2026",
+            place: "CECCA — Alternance (3 jours/semaine)",
+            desc: "Alternance dans le cadre de mon BTS SIO SLAM, sur des projets de développement web et applicatif.",
+          },
+          {
+            period: "31/03/2025 – 15/05/2025",
+            place: "Sonis (Les Ulis, 91) — Stage Développeur Web",
+            desc: "Conception et développement d'une application web responsive de gestion de stock (mobile & desktop), migration d'une stack PHP/MySQL vers une architecture full JavaScript (Express, EJS, React), intégration d'un système de scan QR / codes-barres, alertes e-mail en temps réel, authentification et sécurisation HTTPS/SSL.",
+          },
+          {
             period: "Oct 2024 – Présent",
             place: "H3 Hitema — BTS SIO SLAM",
-            desc: "Travail avec SONIS et CECCA sur des projets de développement web et applicatif en apprentissage.",
+            desc: "Études en Solutions d'Infrastructure, Systèmes et Réseaux — option Solutions Logicielles et Applications Métiers.",
           },
           {
             period: "Sep 2021 – Juil 2024",
-            place: "Lycée Polyvalent Jean-Jaurès",
+            place: "Lycée Polyvalent Jean-Jaurès — Bac Général",
             desc: "Approfondissement des connaissances en informatique et exploration de carrières via des projets créatifs.",
           },
         ],
